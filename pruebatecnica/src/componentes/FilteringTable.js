@@ -1,9 +1,10 @@
 import React, {useMemo} from 'react'
-import {useTable} from 'react-table'
+import {useTable, useGlobalFilter, useSortBy} from 'react-table'
 import {COLUMNS} from './columns'
+import { GlobalFilter } from './GlobalFilter'
 import './table.css'
 
-function BasicTable(props) {
+function FilteringTable(props) {
 
     const columns = useMemo(() => COLUMNS, [])
     const data = useMemo(() => props.data, [])
@@ -21,17 +22,31 @@ function BasicTable(props) {
         headerGroups,
         //footerGroups,
         rows,
-        prepareRow
-    } = tableInstance
+        prepareRow,
+        state,
+        setGlobalFilter
+    } = useTable({
+        columns,
+        data,
+    }, useGlobalFilter, useSortBy
+    )
+
+    const { globalFilter } = state
 
     return (
+    <>
+        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
         <table {...getTableProps()}>
             <thead>
                 {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                         {
                             headerGroup.headers.map( column =>(
-                                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render('Header')}
+                                    <span>
+                                            {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+                                    </span>                                
+                                </th>
                             ))
                         }
                     </tr>
@@ -64,7 +79,8 @@ function BasicTable(props) {
                 ))}
             </tfoot> */}
         </table>
+    </>
     )
 }
 
-export default BasicTable;
+export default FilteringTable;
