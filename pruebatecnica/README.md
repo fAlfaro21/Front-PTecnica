@@ -1,8 +1,8 @@
 # Instructions to launch the application
 
 1. Go to the Back-PTecnica repository [https://github.com/fAlfaro21/Back-PTecnica](https://github.com/fAlfaro21/Back-PTecnica). Clone the repository in your local machine.
-    1.1. Open the terminal and go to the 'Back-PTecnica' folder.
-    1.2. Execute the `npm start` command.
+1.1. Open the terminal and go to the 'Back-PTecnica' folder.
+1.2. Execute the `npm start` command.
 2. Clone this repository ('Front-PTecnica') in your local machine.
 3. Open a second terminal and go to the folder 'Front-PTecnica\testtecnica'.
 4. Execute the `npm start` command, which will open a new browser window.
