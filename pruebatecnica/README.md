@@ -6,6 +6,7 @@
 4. Clone this repository in your local machine.
 5. Open a second terminal and go to the folder 'Front-PTecnica\testtecnica'.
 6. Execute the `npm start` command, which will open a new browser window.
+7. You will see the application running (MySQL, Express, React, Node).
 
 
 # Getting Started with Create React App
