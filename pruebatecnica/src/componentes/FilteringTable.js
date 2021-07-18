@@ -8,7 +8,7 @@ function FilteringTable(props) {
 
     const columns = useMemo(() => COLUMNS, [])
     const data = useMemo(() => props.data, [])
-    console.log(data);
+    console.log(props.data);
 
     const tableInstance = useTable({
         columns: columns,   // podría suplirse por únicamente columns (ES6)

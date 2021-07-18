@@ -1,3 +1,11 @@
+# Instructions to launch the application
+
+1. Open the terminal and go to the 'Back-PTecnica' folder.
+2. Execute the npm start command.
+3. Open a second terminal and go to the folder 'Front-PTecnica \ testtecnica'.
+4. Execute the npm start command, which will open a new browser window.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
